@@ -5,7 +5,7 @@
 #' @param data Data frame
 #' @param var Columna del data frame que se quiere graficar
 #' @import dplyr
-#' @import ggplot2
+#' @importFrom ggplot2 ggplot
 #' @export
 
 
