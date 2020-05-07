@@ -5,8 +5,7 @@
 #' @param data Data frame
 #' @param validator Conjunto de reglas generado con paquete validate
 #' @param id Identificador de cada registro. Es un string
-#' @importFrom validate confront
-#' @import dplyr
+#' @import validate
 #' @export
 
 validate_var <- function(data, validator, id) {
@@ -38,8 +37,7 @@ validate_var <- function(data, validator, id) {
 #' @param data Data frame
 #' @param vals Conjunto de reglas generado con paquete validate. Un objeto por columna
 #' @param id Es un string. Identificador de cada registro.
-#' @importFrom validate confront
-#' @import dplyr
+#' @import validate
 #' @export
 
 validate_data <- function(data, vals, id) {
