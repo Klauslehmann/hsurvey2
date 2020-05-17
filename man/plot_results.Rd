@@ -2,15 +2,18 @@
 % Please edit documentation in R/plot_functions.R
 \name{plot_results}
 \alias{plot_results}
-\title{Grafica una columna del data frame}
+\title{\code{plot_results} grafica la cantidad de registros verdaderos y falsos para una columna}
 \usage{
 plot_results(data, var)
 }
 \arguments{
-\item{data}{Data frame}
+\item{data}{\code{data.frame}}
 
 \item{var}{Columna del data frame que se quiere graficar}
 }
+\value{
+Gráfico de \code{ggplot} con registros válidos e inválidos
+}
 \description{
-Valida una columna del data frame, mostrando la cantidad de casos válidos e inválidos.
+Muestra un gráfico de \code{ggplot} con la cantidad de registros válidos e inválidos para una columna en un \code{data.frame}.
 }
