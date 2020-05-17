@@ -1,10 +1,18 @@
 #' Valida la columna de un data frame, en base a reglas establecidas
 #'
-#' Valida una columna de un data frame, siguiendo las reglas establecidas con anterioridad.
+#' Valida una columna de un \code{data.frame}, siguiendo las reglas establecidas con anterioridad.
 #'
 #' @param data Data frame
-#' @param validator Conjunto de reglas generado con paquete validate
-#' @param id Identificador de cada registro. Es un string
+#' @param validator Objeto creado con validate. Conjunto de reglas que debe ser creado previamente para cada una de las columnas.
+#' @param id Identificador de cada registro. Es un string que debe ser creado dentro de la tabla que se está validando.
+#' @return Retorna un \code{data.frame} con información de verdadero o falso para cada uno de los registros
+#' \itemize{
+#'  \item id2
+#'  \item name
+#'  \item value
+#'  \item expression
+#'  \item all_rules_true
+#' }
 #' @import validate
 #' @export
 
@@ -19,7 +27,6 @@ validate_var <- function(data, validator, id) {
       mutate(all_rules_true = mean(value, na.rm = T),
              all_rules_true = if_else(all_rules_true == 1, 1, 0)) %>%
       filter(row_number() == 1)
-    #names(small_report)[dim(small_report)[2]] <- variable
     return(small_report)
   }
 
@@ -35,8 +42,9 @@ validate_var <- function(data, validator, id) {
 #' Valida un conjunto de columnas de un data frames, siguiendo las reglas establecidas con anterioridad mediante el paquete validate.
 #'
 #' @param data Data frame
-#' @param vals Conjunto de reglas generado con paquete validate. Un objeto por columna
-#' @param id Es un string. Identificador de cada registro.
+#' @param vals Vector de strings que contiene cada una de las reglas. Se requiere un objeto validate para cada columna que se quiere evaluar.
+#' @param id Identificador de cada registro. Es un string que debe ser creado dentro de la tabla que se está validando.
+#' @return Lista que contiene un \code{data.frame} para cada una de las columnas evaluadas
 #' @import validate
 #' @export
 

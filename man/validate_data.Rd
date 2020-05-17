@@ -9,9 +9,12 @@ validate_data(data, vals, id)
 \arguments{
 \item{data}{Data frame}
 
-\item{vals}{Conjunto de reglas generado con paquete validate. Un objeto por columna}
+\item{vals}{Vector de strings que contiene cada una de las reglas. Se requiere un objeto validate para cada columna que se quiere evaluar.}
 
-\item{id}{Es un string. Identificador de cada registro.}
+\item{id}{Identificador de cada registro. Es un string que debe ser creado dentro de la tabla que se está validando.}
+}
+\value{
+Lista que contiene un \code{data.frame} para cada una de las columnas evaluadas
 }
 \description{
 Valida un conjunto de columnas de un data frames, siguiendo las reglas establecidas con anterioridad mediante el paquete validate.

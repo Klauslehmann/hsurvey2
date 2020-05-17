@@ -1,13 +1,12 @@
-#' Grafica una columna del data frame
+#' \code{plot_results} grafica la cantidad de registros verdaderos y falsos para una columna
 #'
-#' Valida una columna del data frame, mostrando la cantidad de casos válidos e inválidos.
+#' Muestra un gráfico de \code{ggplot} con la cantidad de registros válidos e inválidos para una columna en un \code{data.frame}.
 #'
-#' @param data Data frame
+#' @param data \code{data.frame}
 #' @param var Columna del data frame que se quiere graficar
+#' @return Gráfico de \code{ggplot} con registros válidos e inválidos
 #' @importFrom ggplot2 ggplot
 #' @export
-
-
 
 plot_results <- function(data, var) {
 

@@ -9,10 +9,20 @@ validate_var(data, validator, id)
 \arguments{
 \item{data}{Data frame}
 
-\item{validator}{Conjunto de reglas generado con paquete validate}
+\item{validator}{Objeto creado con validate. Conjunto de reglas que debe ser creado previamente para cada una de las columnas.}
 
-\item{id}{Identificador de cada registro. Es un string}
+\item{id}{Identificador de cada registro. Es un string que debe ser creado dentro de la tabla que se está validando.}
+}
+\value{
+Retorna un \code{data.frame} con información de verdadero o falso para cada uno de los registros
+\itemize{
+\item id2
+\item name
+\item value
+\item expression
+\item all_rules_true
+}
 }
 \description{
-Valida una columna de un data frame, siguiendo las reglas establecidas con anterioridad.
+Valida una columna de un \code{data.frame}, siguiendo las reglas establecidas con anterioridad.
 }
